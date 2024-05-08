@@ -6,76 +6,103 @@
     <style>
         /* Navbar */
         .navbar {
-            background-color: #343a40; /* Dark background color */
+            background-color: #2980b9; /* Dark blue background */
         }
 
-        .navbar-brand {
+        .navbar-brand, .navbar-nav .nav-link {
             color: #fff; /* White text color */
         }
 
-        .navbar-nav .nav-link {
-            color: #fff !important; /* White text color */
+        .navbar-nav .nav-link:hover {
+            color: #ffc107; /* Yellow text color on hover */
         }
 
        /* Jumbotron */
-.jumbotron {
-    background: url('https://medlineplus.gov/images/ManagedCare_share.jpg') center center;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.6);
+ /* Jumbotron */
+ .jumbotron {
+            background-image: url('https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            padding: 100px 0; /* Adjust the padding */
+            text-align: center; /* Align text to center */
+            color: #fff; /* White text color */
+        }
 
-    color: #fff; /* White text color */
-    padding: 150px 0; /* Adjust the padding */
-    text-align: center;
-}
+        .jumbotron h1 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px; /* Add margin bottom */
+        }
 
-/* Paragraph styling */
-.jumbotron p {
-    font-family: 'Roboto', sans-serif; /* Modern font */
-    font-size: 1.2rem; /* Adjust the font size */
-    color: #fff; /* Light gray text color */
-     /* Adjust the line height */
-}
-
+        .jumbotron p {
+            font-size: 18px;
+        }
 /* Image container */
-.image-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+
+
+.card {
+    position: relative; /* Relative positioning for absolute child */
+    z-index: 1; /* Ensure card is above overlay */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: transform 0.3s ease; /* Smooth transition */
+    margin-bottom:199 px; /* Adjust margin to position card */
+    background: linear-gradient(to bottom, #4e54c8, #2980b9); /* Gradient background */
+
+}
+.card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* Increase shadow on hover for depth */
+}
+.card:hover {
+    transform: translateY(-5px); /* Move card up on hover */
 }
 
-.image-container img {
-    margin: 0 10px;
-    max-width: 200px;
-    max-height: 200px;
-    border-radius: 50%; /* Make the images circular */
+.card-body {
+    padding: 30px; /* Padding inside the card body */
 }
 
-/* Dropdown styling */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+.card-body h1 {
+    font-size: 28px; /* Heading font size */
+    margin-bottom: 20px; /* Bottom margin for heading */
+    color: white; /* Heading color */
+    text-align: center; /* Center align heading */
+    font-weight: bold;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+.card-body label {
+    font-weight: bold; /* Bold label text */
+    color: white; /* Label text color */
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+.card-body input[type="file"] {
+    margin-bottom: 20px; /* Bottom margin for file input */
+    border: 1px solid #cccccc; /* Gray border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside input */
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+.card-body button {
+    width: 100%; /* Full width button */
+    padding: 12px; /* Padding for button */
+    background-color: rgb(73, 238, 73); /* Blue button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
+
+.card-body button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.card-body img {
+    max-width: 100%; /* Ensure uploaded image fits inside card */
+    margin-top: 20px; /* Top margin for image */
+    border-radius: 5px; /* Rounded corners for image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
 
 .show {
     display: block;
@@ -83,8 +110,8 @@
 
     </style>
 </head>
-
 <body>
+    
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
@@ -93,21 +120,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index">Home</a>
+                        <a class="nav-link" href="/home">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <div class="dropdown">
-                            <span class="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-expanded="false">
-                                Predict
-                            </span>
-                            <div class="dropdown-content" id="dropdownContent">
-                                <a href="covid">Covid 19</a>
-                                <a href="tumor">Brain Tumor</a>
-                                <a href="#">Option 3</a>
-                            </div>
-                        </div>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Predict
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="covid">Covid 19</a></li>
+                            <li><a class="dropdown-item" href="tumor">Brain Tumor</a></li>
+                            <li><a class="dropdown-item" href="reno">Eye Renopathy</a></li>
+                            <li><a class="dropdown-item" href="pnemo">Pnemonia</a></li>
+                            <li><a class="dropdown-item" href="xray">X-ray Checkup</a></li>
+                            <li><a class="dropdown-item" href="reno">Alzimer</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
@@ -115,59 +143,95 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-     <!-- Content -->
-     <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="text-center mb-4">BrainTumor Classifier</h1>
-                        <form action="/" method="post" enctype="multipart/form-data">
-                            <div class="mb-3">
-                                <label for="imagefile" class="form-label">Upload Mri Image</label>
-                                <input class="form-control" type="file" id="imagefile" name="imagefile" accept="image/*">
+    <!-- Content -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Welcome to Medical Imaging</h1>
+            <p>Logged in as: <strong>{{session.name}}</strong></p>
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h1 class="text-center mb-4">Brain tumor Classifier</h1>
+                                <form action="/tumor" method="post" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <label for="imagefile" class="form-label">Upload mri Image</label>
+                                        <input class="form-control" type="file" id="imagefile" name="imagefile" accept="image/*">
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-primary" type="submit">Predict</button>
+                                    </div>
+                                </form>
+                                {% if prediction %}
+                                    <div class="text-center mt-4">
+                                        <h3>Uploaded Image:</h3>
+                                        <img src="data:image/jpeg;base64,{{ image_data }}" class="img-fluid" alt="Uploaded Image">
+                                    </div>
+                                    <p class="text-center mt-3">Prediction: {{ prediction }}</p>
+                                {% endif %}
+                                {% if accuracy %}
+                                <p>Accuracy: {{ accuracy }}%</p>
+                                {% endif %}
                             </div>
-                            <div class="text-center">
-                                <button class="btn btn-primary" type="submit">Predict</button>
-                            </div>
-                        </form>
-                        {% if prediction %}
-                            <div class="text-center mt-4">
-                                <h3>Uploaded Image:</h3>
-                                <img src="data:image/jpeg;base64,{{ image_data }}" class="img-fluid" alt="Uploaded Image">
-                            </div>
-                            <p class="text-center mt-3">Prediction: {{ prediction }}</p>
-                        {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Card -->
+    
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@medicalimaging.com</p>
+                    <p>Phone: 123-456-7890</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-light me-2">Facebook</a>
+                    <a href="#" class="text-light me-2">Twitter</a>
+                    <a href="#" class="text-light">LinkedIn</a>
+                </div>
+                <div class="col-md-4">
+                    <p>&copy; 2024 Medical Imaging. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+uI3pzzUi+U8eOV1wK1XT5thkiVCA8pW/L5SAeNq2Ylwo8jMhqI5iZj2IM" crossorigin="anonymous"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var dropdown = document.querySelector(".dropdown");
-            var dropdownContent = document.querySelector(".dropdown-content");
+          document.addEventListener("DOMContentLoaded", function() {
+    var dropdown = document.querySelector(".dropdown");
+    var dropdownContent = dropdown.querySelector(".dropdown-menu");
 
-            dropdown.addEventListener("click", function() {
-                dropdownContent.classList.toggle("show");
-            });
+    dropdown.addEventListener("click", function() {
+        dropdownContent.classList.toggle("show");
+    });
 
-            window.addEventListener("click", function(event) {
-                if (!dropdown.contains(event.target)) {
-                    dropdownContent.classList.remove("show");
-                }
-            });
-        });
+    window.addEventListener("click", function(event) {
+        if (!dropdown.contains(event.target)) {
+            dropdownContent.classList.remove("show");
+        }
+    });
+});
     </script>
 </body>
 </html>

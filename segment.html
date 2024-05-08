@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Segmentation</title>
+</head>
+<body>
+    <h1>Upload an Image</h1>
+    <form action="/segment" method="post" enctype="multipart/form-data">
+        <input type="file" name="imagefile" accept="image/png, image/jpeg">
+        <input type="submit" value="Upload Image">
+    </form>
+    {% if segmented_image %}
+        <h2>Segmentation Result:</h2>
+        <img src="data:image/png;base64,{{ segmented_image }}" alt="Segmented Image">
+    {% endif %}
+</body>
+</html>

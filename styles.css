@@ -1,0 +1,147 @@
+  /* Navbar */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+  .navbar {
+    background-color: #243069; /* Dark blue background color */
+    height: 100px; /* Adjust the height */
+    border-bottom: 4px solid #1e3a64; /* Darker blue border */
+    padding: 10px 0;
+    opacity: 0.7;
+}
+
+.navbar-brand {
+    color: #fff; /* White text color */
+    font-size: 32px; /* Adjust the font size */
+    font-weight: bold; /* Make the font bold */
+    text-transform: uppercase; /* Convert text to uppercase */
+}
+
+.navbar-toggler {
+    color: #fff; /* White color for the toggler */
+    border-color: #fff; /* White border color for the toggler */
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none; /* Remove outline on focus/active */
+}
+
+.navbar-toggler-icon {
+    background-color: #fff; /* White background for the toggler icon */
+}
+
+.navbar-collapse {
+    justify-content: flex-end; /* Align content to the right */
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important; /* White text color */
+    font-size: 18px; /* Adjust the font size */
+    margin-right: 20px; /* Add margin between links */
+    text-transform: uppercase; /* Convert text to uppercase */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107 !important; /* Yellow text color on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        font-size: 28px; /* Reduce font size for smaller screens */
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar {
+        height: auto; /* Auto height for smaller screens */
+    }
+    .navbar-collapse {
+        background-color: #243069; /* Dark blue background color */
+        padding: 10px; /* Add padding to the collapse container */
+        border-top: 4px solid #1e3a64; /* Darker blue border */
+    }
+    .navbar-nav .nav-link {
+        margin-right: 0; /* Remove right margin for smaller screens */
+        margin-bottom: 10px; /* Add bottom margin for smaller screens */
+        display: block; /* Display links as blocks for smaller screens */
+        text-align: center; /* Center align links for smaller screens */
+    }
+    .navbar-toggler {
+        margin-right: 10px; /* Add margin between toggler and links for smaller screens */
+    }
+}
+
+/* Jumbotron */
+.jumbotron {
+background: url('https://t3.ftcdn.net/jpg/02/19/91/48/360_F_219914874_fcqxEeJ6clfwf43OcCNAMGNBySKzF5hl.jpg') center center;
+background-size: cover;
+/* White text color */
+padding: 35px 0; /* Adjust the padding */
+text-align: center;
+}
+.jumbotron h1{
+font-size: 50px;
+color: #243069;
+font-weight: bold;
+text-align: left;
+line-height: 72px;
+}
+
+/* Paragraph styling */
+.jumbotron p {
+font-family: 'Roboto', sans-serif; /* Modern font */
+font-size: 1.2rem; /* Adjust the font size */
+color: #243069; /* Light gray text color */
+/* Adjust the line height */
+
+}
+
+/* Image container */
+.image-container {
+margin-top: 20px;
+display: flex;
+justify-content: center;
+}
+
+.image-container img {
+margin: 0 10px;
+max-width: 200px;
+max-height: 200px;
+border-radius: 50%; /* Make the images circular */
+}
+
+/* Dropdown styling */
+.dropdown {
+position: relative;
+display: inline-block;
+cursor: pointer;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {
+background-color: #f1f1f1;
+}
+
+.show {
+display: block;
+}

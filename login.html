@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Login Form</title>
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<style>
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('https://www.intelligentcio.com/eu/wp-content/uploads/sites/20/2021/06/AdobeStock_254909133_1000px-1000x450.jpg'); /* Replace 'your-background-image.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures rounded corners don't overlap content */
+}
+
+.left-section {
+    background-color: #007bff;
+    color: #fff;
+    padding: 50px 30px;
+}
+
+.left-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.left-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.right-section {
+    padding: 50px 30px;
+}
+
+.form-group label {
+    color: #555;
+}
+
+.form-control {
+    border-color: #ced4da;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+}
+
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #007bff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0056b3;
+}
+.form_register p a{
+	color: red;
+	
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 left-section">
+            <h2>Welcome Back!</h2>
+            <p>Please login to continue accessing our services.</p>
+        </div>
+        <div class="col-md-6 right-section">
+            <h2>User Login</h2>
+            <form action="{{ url_for('login') }}" method="post">
+                {% if message is defined and message %}
+                    <div class="alert alert-warning">{{ message }}</div>
+                {% endif %}
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd">
+                </div>    
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+				<div class="form_register">
+					<p class="bottom">Don't have an account? <a class="bottom" href="{{url_for('register')}}">Register here</a></p>
+				</div>
+            </form>
+            <div class="social-icons">
+                <span>Or login with:</span>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Font Awesome -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>
